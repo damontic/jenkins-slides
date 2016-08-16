@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Jenkins</title>
+
+		<meta name="description" content="Jenkins">
+		<meta name="author" content="David Alberto Montaño Fetecua">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+		<link rel="stylesheet" href="css/presentacion.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1><b>Jenkins</b></h1>
+					<h2>Build great things at any scale</h2>
+					<a href="http://www.seven4n.com">
+						<img data-src="./images/S4N.png" >
+					</a>
+					<p>
+						<small>Author:
+							<a href="mailto:davidmontano@seven4n.com">David Montaño</a>
+						</small>
+					</p>
+				</section>
+
+				<section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>Description</li>
+							<li>Freestyle Jobs</li>
+							<li>Plugins</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+					<section>
+						<h2>Description</h2>
+					</section>
+					<section>
+						<h3>Jenkins</h3>
+						<blockquote cite="https://www.google.com.co/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwih7em0jcXOAhXCJh4KHSP3CngQFggcMAA&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FJenkins_(software)&usg=AFQjCNFJY4QUEGdWpy8EHtZy8RcGLLXJDA">Jenkins is an open source <b>continuous integration tool</b> written in Java. The project was forked from Hudson after a dispute with Oracle.</blockquote>
+					</section>
+					<section>
+						<h3>Jenkins</h3>
+						<blockquote cite="https://www.google.com.co/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwih7em0jcXOAhXCJh4KHSP3CngQFggcMAA&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FJenkins_(software)&usg=AFQjCNFJY4QUEGdWpy8EHtZy8RcGLLXJDA">It is a server-based system running in a servlet container such as Apache Tomcat. It supports SCM tools including AccuRev, CVS, Subversion, Git, Mercurial, Perforce, Clearcase and RTC, and can execute Apache Ant and Apache Maven based projects as well as arbitrary shell scripts and Windows batch commands. The primary developer of Jenkins is <b>Kohsuke Kawaguchi</b>.</blockquote>
+					</section>
+					<section>
+						<h3>Jenkins</h3>
+						<blockquote cite="https://www.google.com.co/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwih7em0jcXOAhXCJh4KHSP3CngQFggcMAA&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FJenkins_(software)&usg=AFQjCNFJY4QUEGdWpy8EHtZy8RcGLLXJDA">Builds can be started by various means:
+							<ul>
+								<li>triggered by commit in a version control system</li>
+								<li>scheduling via a cron-like mechanism</li>
+								<li>building when other builds have completed</li>
+								<li>requesting a specific build URL</li>
+							</ul>
+						</blockquote>
+					</section>
+					<section>
+						<h3>Continuous Integration</h3>
+						<ul>
+							<li>Merging development work with a Master/Trunk/Mainline branch constantly so that you can test changes, and test that changes work with other changes.</li>
+							<li>Test your code as often as possible to catch issues early.</li>
+							<li>Automated tests: unit test framework.</li>
+							<li>Build server performing these tests while developers can continue working.</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Continuous Delivery</h3>
+						<ul>
+						<li>Continual delivery of code to an environment.</li>
+						<li>Deliver code to a user base, whether it be QA or customers for continual review and inspection.</li>
+						<li>Small batches of work continually fed to the next step will be consumed more easily and find more issues early on.</li>
+						<li>Easier for the developer because issues are presented to the developer before the task has left their memory.</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Continuous Deployment</h3>
+						<ul>
+						<li>Deployment or release of code to Production as soon as it is ready.</li>
+						<li>Any testing is done prior to merging to the Mainline branch and is performed on Production-like environments.</li>
+						<li>The Production branch is always stable and ready to be deployed by an automated process.</li>
+						<li>The automated process is key because it should be able to be performed by anyone in a matter of minutes (preferably by the press of a button).</li>
+						<li>Logs and Metrics</li>
+						<li>Continuous Integration + Continuous Delivery</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Microservices</h3>
+						<img src='./images/sketch.png' />
+					</section>
+					<section>
+						<h3>Other Continuous Delivery Tools</h3>
+						<ul>
+							<li>GoCD</li>
+							<li>Team City</li>
+							<li>Circle CI</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+					<section>
+						<h2>Freestyle Jobs</h2>
+					</section>
+					<section>
+						<h3>Freestyle Jobs</h3>
+						<img src='./images/fscreation.png' />
+					</section>
+					<section>
+						<h3>Freestyle Jobs</h3>
+						<img src='./images/general1.png' />
+					</section>
+					<section>
+						<h3>Freestyle Jobs</h3>
+						<img src='./images/general2.png' />
+					</section>
+					<section>
+						<h3>Freestyle Jobs</h3>
+						<img src='./images/general3.png' />
+					</section>
+				</section>
+
+				<section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+					<section>
+						<h2>Plugins</h2>
+					</section>
+					<section>
+						<h3>Install using the Interface</h3>
+						<img src='./images/plugins1.png' />
+					</section>
+					<section>
+						<h3>Install using the Interface</h3>
+						<img src='./images/plugins2.png' />
+					</section>
+					<section>
+						<h3>Install using the Interface</h3>
+						<img src='./images/plugins3.png' />
+					</section>
+					<section>
+						<h3>Install by Hand</h3>
+						<ol>
+							<li><a href='http://updates.jenkins-ci.org/download/plugins/'>Download a Plugin</a></li>
+							<li>Save the downloaded *.hpi/*.jpi file into the $JENKINS_HOME/plugins directory. You will then need to restart Jenkins (many containers let you do this without restarting the container)</li>
+							<li>Caveat: the names of the plugin directories on the download site are not always matching the name given to the plugin; common sense should apply.</li>
+						<ol>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					// { src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
